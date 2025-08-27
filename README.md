@@ -18,19 +18,6 @@ the first line is optional. all existing scenarios should still be supported
 
 ## Tasks
 
-
-## Test Specs
-
-- For an empty string it will return 0
-- For an input "1\n2,3" string it will return 6
-- For an input "1,2" string it will return 3
-- For an input "1" string it will return 1
-- For an input "1,\n" string it will return invalid input
-- For an input "//;\n1;2" string it will return 3
-- For an input "4,1001" string it will return 4 (ignore numbers > 1000)
-- For an input "-1,2,-3" string it will throw exception -> "negetives not allowed"
-- For an input "1\n2,3" string it will return 6
-
 ## Test Cases – StringCalculator
 
 | Test Case ID | Name                                     | Precondition        | Input                  | Action   | Expected Output / Exception                 | Comment              |
