@@ -18,7 +18,20 @@ the first line is optional. all existing scenarios should still be supported
 
 ## Tasks
 
+## Test Cases – StringCalculator
 
+| Test Case ID | Name                                     | Precondition        | Input                  | Action   | Expected Output / Exception                 | Comment              |
+|--------------|------------------------------------------|---------------------|------------------------|----------|---------------------------------------------|----------------------|
+| TC01         | Empty string returns zero                | Calculator instance | `""`                   | Call add | `0`                                         | Basic case           |
+| TC02         | Single number returns its value          | Calculator instance | `"1"`                  | Call add | `1`                                         | Single value         |
+| TC03         | Two numbers separated by comma           | Calculator instance | `"1,2"`                | Call add | `3`                                         | Two values           |
+| TC04         | Unknown amount of numbers                | Calculator instance | `"1,2,3,4"`            | Call add | `10`                                        | Multiple values      |
+| TC05         | New lines between numbers                | Calculator instance | `"1\n2,3"`             | Call add | `6`                                         | Mixed delimiters     |
+| TC06         | Custom single-character delimiter        | Calculator instance | `"//;\n1;2"`           | Call add | `3`                                         | Custom delimiter     |
+| TC07         | Custom multi-character delimiter         | Calculator instance | `"//[***]\n1***2***3"` | Call add | `6`                                         | Multi-length delim   |
+| TC08         | Negative numbers throw exception         | Calculator instance | `"1,-2,3"`             | Call add | Exception → `"negatives not allowed: -2"`   | Negative validation  |
+| TC09         | Multiple negative numbers throw exception| Calculator instance | `"1,-2,-3"`            | Call add | Exception → `"negatives not allowed: -2, -3"` | Negative validation  |
+| TC10         | Numbers greater than 1000 are ignored    | Calculator instance | `"2,1001"`             | Call add | `2`                                         | Ignore >1000         |
 
 Establish quality parameters:
 
