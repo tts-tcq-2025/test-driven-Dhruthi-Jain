@@ -22,6 +22,9 @@ int main() {
     try { calc.add("1,-2,3"); assert(false); }
     catch (const std::runtime_error& e) { assert(std::string(e.what()) == "negatives not allowed: -2"); }
 
+    try { calc.add("1,-2,-3"); assert(false); }
+    catch (const std::runtime_error& e) { assert(std::string(e.what()) == "negatives not allowed: -2, -3"); }
+
     std::cout << "All tests passed!" << std::endl;
     return 0;
 }
