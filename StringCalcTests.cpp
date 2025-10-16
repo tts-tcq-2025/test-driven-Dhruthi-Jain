@@ -19,7 +19,8 @@ int main() {
     
     assert(calc.add("//[***]\n1***2***3") == 6);
 
-
+    try { calc.add("1,-2,3"); assert(false); }
+    catch (const std::runtime_error& e) { assert(std::string(e.what()) == "negatives not allowed: -2"); }
 
     std::cout << "All tests passed!" << std::endl;
     return 0;
