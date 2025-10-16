@@ -11,6 +11,10 @@ int main() {
 
     assert(calc.add("1,2") == 3);
 
+    assert(calc.add("1,2,3,4") == 10);
+
+    
+
     std::cout << "All tests passed!" << std::endl;
     return 0;
 }
